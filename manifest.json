@@ -1,7 +1,7 @@
 {
   "name": "N&B Automotriz SpA",
   "short_name": "N&B Automotriz",
-  "description": "Diagnóstico, programación y reparación de módulos automotrices en Maipú.",
+  "description": "Diagnóstico, programación y reparación de módulos automotrices en Padre Hurtado.",
   "id": "/",
   "start_url": "./index.html",
   "scope": "./",

@@ -3,23 +3,16 @@ const CONFIG = {
   phone: "+56992870585",
   phoneDisplay: "+56 9 9287 0585",
   email: "n.b.automotrizspa@gmail.com",
-  city: "Maipú, Santiago",
-  mapsQuery: "Maipú, Santiago, Chile",
+  address: "Los Remos 995, 9720323 Padre Hurtado, Región Metropolitana",
+  mapsPlaceUrl:
+    "https://www.google.com/maps/place/N%26B+AUTOMOTRIZ+SPA/@-33.5689649,-70.8263648,17z/data=!3m1!4b1!4m6!3m5!1s0x9662e78df1216275:0x427aa48f041149a3!8m2!3d-33.5689649!4d-70.8263648!16s%2Fg%2F11zhlj987t",
+  mapsDirectionsUrl:
+    "https://www.google.com/maps/dir/?api=1&destination=N%26B+AUTOMOTRIZ+SPA,+Los+Remos+995,+Padre+Hurtado",
+  mapsEmbedUrl:
+    "https://www.google.com/maps?q=N%26B+AUTOMOTRIZ+SPA,+Los+Remos+995,+Padre+Hurtado&z=17&output=embed",
   defaultWhatsApp:
     "Hola, quiero cotizar un trabajo con N&B Automotriz.",
 };
-
-function mapsSearchUrl() {
-  return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.mapsQuery);
-}
-
-function mapsEmbedUrl() {
-  return (
-    "https://maps.google.com/maps?q=" +
-    encodeURIComponent(CONFIG.mapsQuery) +
-    "&z=13&output=embed"
-  );
-}
 
 function whatsAppUrl(text) {
   const msg = text || CONFIG.defaultWhatsApp;
@@ -37,12 +30,15 @@ function applyBindings() {
     el.setAttribute("href", "mailto:" + CONFIG.email);
   });
   document.querySelectorAll("[data-maps-link]").forEach((el) => {
-    el.setAttribute("href", mapsSearchUrl());
+    el.setAttribute("href", CONFIG.mapsPlaceUrl);
+  });
+  document.querySelectorAll("[data-maps-dir]").forEach((el) => {
+    el.setAttribute("href", CONFIG.mapsDirectionsUrl);
   });
   const iframe = document.getElementById("map-frame");
   if (iframe) {
-    iframe.src = mapsEmbedUrl();
-    iframe.title = "Mapa de " + CONFIG.business + " en " + CONFIG.mapsQuery;
+    iframe.src = CONFIG.mapsEmbedUrl;
+    iframe.title = "Mapa de N&B AUTOMOTRIZ SPA en " + CONFIG.address;
   }
 }
 

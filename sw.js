@@ -1,4 +1,4 @@
-const CACHE = "nb-automotriz-v2";
+const CACHE = "nb-automotriz-v3";
 const ASSETS = [
   "./",
   "./index.html",
@@ -14,6 +14,15 @@ const ASSETS = [
   "./assets/favicon-32.png",
   "./assets/favicon.ico",
   "./assets/icon-source.png",
+  "./assets/catalog/antiasalto.jpg",
+  "./assets/catalog/city-car-laminas.jpg",
+  "./assets/catalog/city-car-polarizado.jpg",
+  "./assets/catalog/sedan-laminas.jpg",
+  "./assets/catalog/sedan-polarizado.jpg",
+  "./assets/catalog/suv-laminas.jpg",
+  "./assets/catalog/suv-polarizado.jpg",
+  "./assets/catalog/llaves.jpg",
+  "./assets/catalog/modulos.jpg",
   "./assets/fonts/outfit-latin.woff2",
   "./assets/fonts/outfit-latin-ext.woff2",
   "./assets/fonts/manrope-latin.woff2",

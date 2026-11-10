@@ -2,12 +2,16 @@ N&B Automotriz SpA — aplicación web (PWA)
 ==========================================
 
 Esta carpeta es una página instalable (se puede agregar a la
-pantalla de inicio). No está publicada: es una copia local
-lista para revisar y, cuando tú lo indiques, subir a un hosting.
+pantalla de inicio).
 
-La ubicación aparece como Maipú, Santiago. El mapa y el botón
-«Cómo llegar» abren Google Maps en esa comuna. La atención
-se agenda por WhatsApp.
+Ubicación (ficha de Google Maps):
+  N&B AUTOMOTRIZ SPA
+  Los Remos 995, 9720323 Padre Hurtado, Región Metropolitana
+  Coordenadas: -33.5689649, -70.8263648
+  https://www.google.com/maps/place/N%26B+AUTOMOTRIZ+SPA/@-33.5689649,-70.8263648,17z/data=!3m1!4b1!4m6!3m5!1s0x9662e78df1216275:0x427aa48f041149a3!8m2!3d-33.5689649!4d-70.8263648!16s%2Fg%2F11zhlj987t
+
+El mapa y «Cómo llegar» apuntan a esa ficha, no solo a la comuna.
+La atención se agenda por WhatsApp.
 
 WhatsApp, teléfono y correo:
   +56 9 9287 0585
@@ -15,29 +19,8 @@ WhatsApp, teléfono y correo:
 
 CÓMO VERLA EN TU COMPUTADOR
 ---------------------------
-Abre la carpeta con un servidor local, por ejemplo:
-
   python3 -m http.server 8080
-
 y entra a http://localhost:8080
 
-CÓMO PUBLICARLA (cuando lo decidas; aquí no se publicó nada)
-------------------------------------------------------------
-1) GitHub Pages, en tu cuenta Nikojorquera
-   Crea un repositorio (por ejemplo nb-automotriz), sube el
-   contenido de esta carpeta y activa Pages en la rama principal.
-   La app quedará en una URL tipo
-   https://nikojorquera.github.io/nb-automotriz/
-   Necesita HTTPS para que se instale como aplicación.
-
-2) Netlify Drop
-   En https://app.netlify.com/drop arrastra esta carpeta.
-   Te entrega una URL inmediata, también con HTTPS.
-
-3) App Studio / iGenApps (la app actual)
-   Esta versión no se pega completa en App Studio. Puedes
-   copiar los textos, el orden de las secciones y el logo,
-   pero el formulario de WhatsApp, el mapa y la instalación
-   como PWA funcionan mejor en Pages o Netlify.
-
-El logotipo reutilizado es el de tu app actual en iGenApps.
+Sitio publicado:
+  https://nikojorquera.github.io/nb-automotriz/
