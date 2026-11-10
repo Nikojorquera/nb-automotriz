@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>N&amp;B Automotriz SpA — Diagnóstico y programación de módulos</title>
+  <meta name="description" content="Taller de electrónica automotriz en Maipú. Diagnóstico con escáner, programación y reparación de módulos, clonación de ECU, inmovilizador, dirección eléctrica EPS y reprogramación Stage 1.">
+  <meta name="theme-color" content="#3D01A4">
+  <meta name="color-scheme" content="dark">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="N&amp;B Automotriz">
+  <meta property="og:title" content="N&amp;B Automotriz SpA">
+  <meta property="og:description" content="Diagnóstico, programación y reparación de módulos automotrices en Maipú.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/icon-512.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <div class="nav-backdrop"></div>
+
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="#inicio">
+        <img src="assets/icon-192.png" width="42" height="42" alt="Logotipo de N&amp;B Automotriz SpA">
+        <span class="brand-name">N&amp;B Automotriz<span>SpA · Maipú</span></span>
+      </a>
+      <nav id="site-nav" class="nav" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#como-trabajamos">Cómo trabajamos</a>
+        <a href="#cotizar">Cotizar</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="btn btn-wa header-wa" data-wa href="https://wa.me/56992870585?text=Hola%2C%20quiero%20cotizar%20un%20trabajo%20con%20N%26B%20Automotriz.">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 2.1 16.7L1 23l6.5-1.1A11 11 0 0 0 20.5 3.5zm-8.5 17a9.1 9.1 0 0 1-4.6-1.3l-.3-.2-3.8.6.6-3.7-.2-.3A9.1 9.1 0 1 1 12 20.5zm5-6.8c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1s-.7.9-.8 1c-.2.2-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.3 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.5-.6c.1-.2.1-.3 0-.5l-.9-2.1c-.2-.6-.5-.5-.6-.5h-.6c-.2 0-.5.1-.7.3-.8.8-1.1 2-.8 3.1a9.6 9.6 0 0 0 2 3.4 11 11 0 0 0 3.3 2.6c.4.2.9.3 1.3.4.6.1 1.1 0 1.5-.2.5-.3 1.5-1.2 1.7-2.3.2-1.1.2-1.9.1-2.1-.1-.1-.3-.2-.6-.3z"/></svg>
+        <span class="btn-label">WhatsApp</span>
+        <span class="btn-label-short">WhatsApp</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="kicker">Electrónica automotriz · Maipú</p>
+          <h1>Diagnóstico, programación y reparación de módulos.</h1>
+          <p class="lede">En N&amp;B Automotriz trabajamos ECU, TCM, BCM, inmovilizador y dirección eléctrica EPS. Si necesitas una cotización, escríbenos por WhatsApp con la marca, el modelo, el año y el problema.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" data-wa href="https://wa.me/56992870585?text=Hola%2C%20quiero%20cotizar%20un%20trabajo%20con%20N%26B%20Automotriz.">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 2.1 16.7L1 23l6.5-1.1A11 11 0 0 0 20.5 3.5zm-8.5 17a9.1 9.1 0 0 1-4.6-1.3l-.3-.2-3.8.6.6-3.7-.2-.3A9.1 9.1 0 1 1 12 20.5zm5-6.8c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1s-.7.9-.8 1c-.2.2-.3.2-.6.1a7.4 7.4 0 0 1-2.2-1.3 8.2 8.2 0 0 1-1.5-1.9c-.2-.3 0-.4.1-.6l.5-.6c.1-.2.1-.3 0-.5l-.9-2.1c-.2-.6-.5-.5-.6-.5h-.6c-.2 0-.5.1-.7.3-.8.8-1.1 2-.8 3.1a9.6 9.6 0 0 0 2 3.4 11 11 0 0 0 3.3 2.6c.4.2.9.3 1.3.4.6.1 1.1 0 1.5-.2.5-.3 1.5-1.2 1.7-2.3.2-1.1.2-1.9.1-2.1-.1-.1-.3-.2-.6-.3z"/></svg>
+              Cotizar por WhatsApp
+            </a>
+            <a class="btn btn-ghost" data-call href="tel:+56992870585">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16 16 0 0 1 3.5 5.7a2 2 0 0 1 3-2.2z"/></svg>
+              Llamar
+            </a>
+          </div>
+          <p class="hero-note">WhatsApp +56 9 9287 0585 · Maipú, Santiago</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 420 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="418" height="338" rx="28" stroke="#3d01a4" stroke-opacity=".55"/>
+            <rect x="18" y="18" width="384" height="304" rx="20" fill="#120826" stroke="#6b2be8" stroke-opacity=".35"/>
+            <g class="trace" stroke="#6b2be8" stroke-opacity=".7" stroke-width="1.4">
+              <path d="M40 70h70l20 20h40"/>
+              <path d="M40 270h90l16-16h50"/>
+              <path d="M380 80h-60l-18 18h-40"/>
+              <path d="M380 250h-70l-14 14h-36"/>
+              <path d="M210 36v40"/>
+              <path d="M210 304v-36"/>
+            </g>
+            <g stroke="#e4c65c" stroke-opacity=".7" stroke-width="1.2">
+              <path d="M86 70v-16"/><path d="M330 80v-18"/>
+              <path d="M130 270v16"/><path d="M310 264v20"/>
+            </g>
+            <rect x="118" y="96" width="184" height="148" rx="16" fill="#1a0d33" stroke="#8a5cf0" stroke-width="2"/>
+            <rect x="136" y="114" width="148" height="88" rx="8" fill="#0b0616" stroke="#3d01a4"/>
+            <circle class="pulse" cx="210" cy="158" r="26" fill="#3d01a4" fill-opacity=".35" stroke="#e4c65c" stroke-width="2"/>
+            <circle cx="210" cy="158" r="8" fill="#e4c65c"/>
+            <g fill="#6b2be8">
+              <rect x="128" y="108" width="10" height="6" rx="1"/>
+              <rect x="148" y="108" width="10" height="6" rx="1"/>
+              <rect x="168" y="108" width="10" height="6" rx="1"/>
+              <rect x="188" y="108" width="10" height="6" rx="1"/>
+              <rect x="208" y="108" width="10" height="6" rx="1"/>
+              <rect x="228" y="108" width="10" height="6" rx="1"/>
+              <rect x="248" y="108" width="10" height="6" rx="1"/>
+              <rect x="268" y="108" width="10" height="6" rx="1"/>
+              <rect x="282" y="128" width="6" height="10" rx="1"/>
+              <rect x="282" y="148" width="6" height="10" rx="1"/>
+              <rect x="282" y="168" width="6" height="10" rx="1"/>
+              <rect x="282" y="188" width="6" height="10" rx="1"/>
+              <rect x="128" y="226" width="10" height="6" rx="1"/>
+              <rect x="148" y="226" width="10" height="6" rx="1"/>
+              <rect x="168" y="226" width="10" height="6" rx="1"/>
+              <rect x="188" y="226" width="10" height="6" rx="1"/>
+              <rect x="208" y="226" width="10" height="6" rx="1"/>
+              <rect x="228" y="226" width="10" height="6" rx="1"/>
+              <rect x="248" y="226" width="10" height="6" rx="1"/>
+              <rect x="268" y="226" width="10" height="6" rx="1"/>
+              <rect x="132" y="128" width="6" height="10" rx="1"/>
+              <rect x="132" y="148" width="6" height="10" rx="1"/>
+              <rect x="132" y="168" width="6" height="10" rx="1"/>
+              <rect x="132" y="188" width="6" height="10" rx="1"/>
+            </g>
+            <text x="210" y="224" text-anchor="middle" fill="#beb6cf" font-family="Outfit, sans-serif" font-size="11" letter-spacing="2">ECU · TCM · BCM</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Servicios</p>
+          <h2>Qué hacemos en el taller</h2>
+          <p class="section-intro">Trabajos de electrónica automotriz: desde el diagnóstico con escáner hasta la programación o reparación del módulo.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="14" height="16" rx="2"/><path d="M7 8h6M7 12h6M7 16h3"/><path d="M17 8h4v4h-4"/></svg>
+            </div>
+            <h3>Diagnóstico computarizado</h3>
+            <p>Lectura de fallas con escáner y revisión de la comunicación entre módulos, para acotar el problema antes de intervenir.</p>
+          </article>
+          <article class="card">
+            <div class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1"/><path d="M9 4v-1M15 4v-1M9 21v1M15 21v1M4 9h-1M4 15h-1M21 9h1M21 15h1"/></svg>
+            </div>
+            <h3>Programación y reparación de módulos</h3>
+            <p>ECU, TCM, BCM y otros módulos: programación, reparación y puesta en marcha según el caso.</p>
+          </article>
+          <article class="card">
+            <div class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="10" height="12" rx="1.5"/><rect x="11" y="6" width="10" height="12" rx="1.5"/><path d="M14 12h6"/></svg>
+            </div>
+            <h3>Clonación de ECU y checksum</h3>
+            <p>Clonado de unidades y corrección de checksum para dejar el archivo o el módulo consistentes.</p>
+          </article>
+          <article class="card">
+            <div class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="15" r="4"/><path d="M11.5 12.5 20 4l2 2-2 2h-3v3l-2 2"/></svg>
+            </div>
+            <h3>Inmovilizador y llaves</h3>
+            <p>Programación de módulos de inmovilizador asociada a la puesta en marcha del vehículo.</p>
+          </article>
+          <article class="card">
+            <div class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/></svg>
+            </div>
+            <h3>Dirección eléctrica EPS</h3>
+            <p>Reparación de dirección eléctrica EPS, con prioridad en Hyundai y Kia. Consulta si tu caso es de otra marca.</p>
+          </article>
+          <article class="card">
+            <div class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 16c3-8 13-8 16 0"/><path d="M8 16l2-6 3 4 2-3 3 5"/><circle cx="12" cy="16" r=".8" fill="currentColor"/></svg>
+            </div>
+            <h3>Reprogramación Stage 1</h3>
+            <p>Ajuste de mapas Stage 1 sobre el archivo de la ECU, previa revisión del vehículo y del archivo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="digital" id="investigacion-digital" aria-labelledby="digital-title">
+      <div class="wrap">
+        <div class="digital-box">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <p class="tag">Línea aparte</p>
+          <h2 id="digital-title">Investigación digital</h2>
+          <p>Verificación de perfiles falsos y detección de estafas. Es un servicio independiente del taller de electrónica automotriz. Si te interesa, escríbenos por WhatsApp indicando que se trata de investigación digital.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-trabajamos">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Proceso</p>
+          <h2>Cómo trabajamos</h2>
+          <p class="section-intro">La cotización parte por un mensaje claro. Después te decimos si se trabaja en el vehículo, en el módulo o con el archivo.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <p class="step-num">01 · Contacto</p>
+            <h3>Cuéntanos el caso</h3>
+            <p>Escribe por WhatsApp o usa el formulario con marca, modelo, año y una descripción del problema.</p>
+          </article>
+          <article class="step">
+            <p class="step-num">02 · Evaluación</p>
+            <h3>Revisamos lo enviado</h3>
+            <p>Te indicamos si el trabajo es viable, qué se puede hacer y qué hay que tener a mano (archivo, módulo o el vehículo).</p>
+          </article>
+          <article class="step">
+            <p class="step-num">03 · Intervención</p>
+            <h3>Programamos o reparamos</h3>
+            <p>Trabajamos con equipos profesionales de programación: diagnosis, clonación, corrección de checksum o reparación del módulo.</p>
+          </article>
+          <article class="step">
+            <p class="step-num">04 · Entrega</p>
+            <h3>Dejamos registro claro</h3>
+            <p>Te explicamos lo realizado y los resguardos para que el vehículo quede operativo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="por-que" style="padding-top: 12px;">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Taller</p>
+          <h2>Por qué elegirnos</h2>
+          <p class="section-intro">Solo lo que podemos sostener con el trabajo que hacemos.</p>
+        </div>
+        <div class="why-grid">
+          <article class="why-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3z"/></svg>
+            <div>
+              <h3>Equipos profesionales de programación</h3>
+              <p>Intervenimos módulos con herramientas de programación y diagnosis de uso profesional.</p>
+            </div>
+          </article>
+          <article class="why-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+            <div>
+              <h3>Respuesta directa por WhatsApp o teléfono</h3>
+              <p>El canal de cotización es directo: +56 9 9287 0585.</p>
+            </div>
+          </article>
+          <article class="why-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/></svg>
+            <div>
+              <h3>EPS con prioridad en Hyundai y Kia</h3>
+              <p>La reparación de dirección eléctrica se concentra en esas marcas. Otras se evalúan caso a caso.</p>
+            </div>
+          </article>
+          <article class="why-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 12h8M12 8v8"/></svg>
+            <div>
+              <h3>Módulos, clonación y checksum</h3>
+              <p>Un mismo taller cubre diagnóstico, programación, clonación de ECU y corrección de checksum.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quote" id="cotizar">
+      <div class="wrap quote-grid">
+        <div>
+          <p class="kicker">Cotización</p>
+          <h2>Pide una cotización por WhatsApp</h2>
+          <p class="section-intro">El formulario arma el mensaje con los datos del vehículo y lo abre en WhatsApp. No queda almacenado en esta página: no hay servidor de respaldo.</p>
+        </div>
+        <form class="form" id="cotizacion-form" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="marca">Marca <span class="req">*</span></label>
+              <input id="marca" name="marca" type="text" autocomplete="off" required placeholder="Ej.: Hyundai">
+              <p class="error" id="error-marca"></p>
+            </div>
+            <div class="field">
+              <label for="modelo">Modelo <span class="req">*</span></label>
+              <input id="modelo" name="modelo" type="text" autocomplete="off" required placeholder="Ej.: Accent">
+              <p class="error" id="error-modelo"></p>
+            </div>
+            <div class="field field-year">
+              <label for="anio">Año <span class="req">*</span></label>
+              <input id="anio" name="anio" type="text" inputmode="numeric" maxlength="4" required placeholder="2018">
+              <p class="error" id="error-anio"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="problema">Problema o trabajo requerido <span class="req">*</span></label>
+            <textarea id="problema" name="problema" required placeholder="Describe la falla, el módulo involucrado o el trabajo que necesitas."></textarea>
+            <p class="error" id="error-problema"></p>
+          </div>
+          <button class="btn btn-primary" type="submit">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 2.1 16.7L1 23l6.5-1.1A11 11 0 0 0 20.5 3.5zm-8.5 17a9.1 9.1 0 0 1-4.6-1.3l-.3-.2-3.8.6.6-3.7-.2-.3A9.1 9.1 0 1 1 12 20.5z"/></svg>
+            Enviar cotización por WhatsApp
+          </button>
+          <p class="form-hint">Se abrirá WhatsApp con un mensaje listo para enviar al +56 9 9287 0585.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Ubicación y contacto</p>
+          <h2>Dónde estamos</h2>
+          <p class="section-intro">Atendemos en Maipú, Santiago. Escríbenos por WhatsApp para coordinar la atención.</p>
+        </div>
+        <div class="contact-grid">
+          <ul class="contact-list">
+            <li>
+              <div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg></div>
+              <div>
+                <span class="meta-label">Ubicación</span>
+                <a data-maps-link href="https://www.google.com/maps/search/?api=1&query=Maip%C3%BA%2C%20Santiago%2C%20Chile">Maipú, Santiago</a>
+              </div>
+            </li>
+            <li>
+              <div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+              <div>
+                <span class="meta-label">Agenda</span>
+                <a data-wa href="https://wa.me/56992870585?text=Hola%2C%20quiero%20cotizar%20un%20trabajo%20con%20N%26B%20Automotriz.">Agenda tu atención por WhatsApp</a>
+              </div>
+            </li>
+            <li>
+              <div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16 16 0 0 1 3.5 5.7a2 2 0 0 1 3-2.2z"/></svg></div>
+              <div>
+                <span class="meta-label">Teléfono y WhatsApp</span>
+                <a data-call href="tel:+56992870585">+56 9 9287 0585</a>
+              </div>
+            </li>
+            <li>
+              <div class="icon-wrap" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></div>
+              <div>
+                <span class="meta-label">Correo</span>
+                <a data-email href="mailto:n.b.automotrizspa@gmail.com">n.b.automotrizspa@gmail.com</a>
+              </div>
+            </li>
+          </ul>
+          <div class="map-wrap">
+            <iframe id="map-frame" title="Mapa de N&amp;B Automotriz en Maipú, Santiago, Chile" src="https://maps.google.com/maps?q=Maip%C3%BA%2C%20Santiago%2C%20Chile&z=13&output=embed" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="preguntas" style="padding-top: 8px;">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Preguntas</p>
+          <h2>Preguntas frecuentes</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>¿Cómo pido una cotización?</summary>
+            <p>Por WhatsApp al +56 9 9287 0585 o con el formulario de esta página. Conviene indicar marca, modelo, año y el problema o el trabajo que necesitas.</p>
+          </details>
+          <details>
+            <summary>¿Pueden trabajar solo con el archivo de la ECU?</summary>
+            <p>En varios trabajos de programación, clonación o Stage 1 se puede trabajar con el archivo. En otros, el módulo o el vehículo tienen que estar en el taller. Lo definimos al revisar el caso.</p>
+          </details>
+          <details>
+            <summary>¿La reprogramación Stage 1 sirve para cualquier auto?</summary>
+            <p>No. Se evalúa el vehículo y el archivo. Si no corresponde, te lo decimos antes de proceder.</p>
+          </details>
+          <details>
+            <summary>¿Solo reparan dirección eléctrica EPS de Hyundai y Kia?</summary>
+            <p>Hyundai y Kia son la prioridad. Si el vehículo es de otra marca, consulta para ver si el caso se puede tomar.</p>
+          </details>
+          <details>
+            <summary>¿Qué cubre el servicio de investigación digital?</summary>
+            <p>Es una línea aparte del taller: verificación de perfiles falsos y detección de estafas. Si te interesa, indícalo en el mensaje de WhatsApp.</p>
+          </details>
+          <details>
+            <summary>¿Dónde están y cómo agendo una hora?</summary>
+            <p>Atendemos en Maipú, Santiago. Agenda tu atención por WhatsApp y coordinamos el momento y el detalle del trabajo.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h2 class="footer-brand">N&amp;B Automotriz SpA</h2>
+          <p>Electrónica automotriz en Maipú, Santiago. Diagnóstico, programación y reparación de módulos.</p>
+        </div>
+        <div>
+          <h2>Contacto</h2>
+          <ul>
+            <li><a data-wa href="https://wa.me/56992870585">WhatsApp: +56 9 9287 0585</a></li>
+            <li><a data-email href="mailto:n.b.automotrizspa@gmail.com">n.b.automotrizspa@gmail.com</a></li>
+            <li><a data-maps-link href="https://www.google.com/maps/search/?api=1&query=Maip%C3%BA%2C%20Santiago%2C%20Chile">Maipú, Santiago</a></li>
+            <li><a data-wa href="https://wa.me/56992870585?text=Hola%2C%20quiero%20cotizar%20un%20trabajo%20con%20N%26B%20Automotriz.">Agenda tu atención por WhatsApp</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>En esta página</h2>
+          <ul>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#cotizar">Cotizar</a></li>
+            <li><a href="#contacto">Ubicación</a></li>
+            <li><a href="#preguntas">Preguntas frecuentes</a></li>
+          </ul>
+          <p style="margin-top:14px">
+            <button class="btn btn-ghost" id="install-btn" type="button" hidden>Agregar a la pantalla de inicio</button>
+          </p>
+        </div>
+      </div>
+      <p class="footer-copy">N&amp;B Automotriz SpA. Sitio informativo: la cotización se confirma por WhatsApp. Puedes agregar esta página a la pantalla de inicio para usarla como aplicación.</p>
+    </div>
+  </footer>
+
+  <nav class="actionbar" aria-label="Acciones rápidas">
+    <a class="wa" data-wa href="https://wa.me/56992870585?text=Hola%2C%20quiero%20cotizar%20un%20trabajo%20con%20N%26B%20Automotriz.">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 2.1 16.7L1 23l6.5-1.1A11 11 0 0 0 20.5 3.5zm-8.5 17a9.1 9.1 0 0 1-4.6-1.3l-.3-.2-3.8.6.6-3.7-.2-.3A9.1 9.1 0 1 1 12 20.5z"/></svg>
+      WhatsApp
+    </a>
+    <a data-call href="tel:+56992870585">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16 16 0 0 1 3.5 5.7a2 2 0 0 1 3-2.2z"/></svg>
+      Llamar
+    </a>
+    <a data-maps-link href="https://www.google.com/maps/search/?api=1&query=Maip%C3%BA%2C%20Santiago%2C%20Chile">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.2"/></svg>
+      Cómo llegar
+    </a>
+  </nav>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
