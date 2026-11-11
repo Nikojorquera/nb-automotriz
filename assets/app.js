@@ -234,11 +234,115 @@ function setupFollow() {
   });
 }
 
+
+function setupShare() {
+  const SHARE_URL = "https://nikojorquera.github.io/nb-automotriz/";
+  const SHARE_TITLE = "N&B Automotriz";
+  const SHARE_TEXT = "Diagnóstico, programación y reparación de módulos automotrices. Atención en todo Chile.";
+  const SHARE_MESSAGE = SHARE_TITLE + " — " + SHARE_TEXT + " " + SHARE_URL;
+
+  const btns = document.querySelectorAll("[data-share]");
+  const modal = document.getElementById("share-modal");
+  if (!btns.length || !modal) return;
+
+  const wa = modal.querySelector("[data-share-wa]");
+  if (wa) wa.href = "https://wa.me/?text=" + encodeURIComponent(SHARE_MESSAGE);
+  const fb = modal.querySelector("[data-share-fb]");
+  if (fb) fb.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(SHARE_URL);
+  const tw = modal.querySelector("[data-share-x]");
+  if (tw) tw.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(SHARE_TITLE + " — " + SHARE_TEXT) + "&url=" + encodeURIComponent(SHARE_URL);
+  const tg = modal.querySelector("[data-share-tg]");
+  if (tg) tg.href = "https://t.me/share/url?url=" + encodeURIComponent(SHARE_URL) + "&text=" + encodeURIComponent(SHARE_TITLE + " — " + SHARE_TEXT);
+
+  const copyBtn = modal.querySelector("[data-share-copy]");
+  const copyLabel = copyBtn?.querySelector(".share-copy-label");
+  const copyStatus = modal.querySelector("[data-share-copied]");
+  const defaultCopyLabel = copyLabel ? copyLabel.textContent : "Copiar enlace";
+  let copyTimer = null;
+
+  function openSheet() {
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+    modal.querySelector("[data-share-close]")?.focus();
+  }
+  function closeSheet() {
+    if (modal.hidden) return;
+    modal.hidden = true;
+    document.body.classList.remove("modal-open");
+    if (copyTimer) {
+      clearTimeout(copyTimer);
+      copyTimer = null;
+    }
+    if (copyLabel) copyLabel.textContent = defaultCopyLabel;
+    copyBtn?.classList.remove("is-copied");
+    if (copyStatus) copyStatus.hidden = true;
+  }
+
+  async function share() {
+    if (typeof navigator.share === "function") {
+      try {
+        await navigator.share({ title: SHARE_TITLE, text: SHARE_TEXT, url: SHARE_URL });
+        return;
+      } catch (err) {
+        if (err && err.name === "AbortError") return;
+      }
+    }
+    openSheet();
+  }
+
+  btns.forEach((b) => b.addEventListener("click", share));
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal || e.target.closest("[data-share-close]")) closeSheet();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeSheet();
+  });
+
+  async function copyLink() {
+    let ok = false;
+    try {
+      await navigator.clipboard.writeText(SHARE_URL);
+      ok = true;
+    } catch (_) {
+      const ta = document.createElement("textarea");
+      ta.value = SHARE_URL;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try { ok = document.execCommand("copy"); } catch (__) { ok = false; }
+      document.body.removeChild(ta);
+    }
+    if (!ok) return;
+    if (copyLabel) copyLabel.textContent = "Enlace copiado";
+    copyBtn?.classList.add("is-copied");
+    if (copyStatus) {
+      copyStatus.hidden = false;
+      copyStatus.textContent = "Enlace copiado";
+    }
+    if (copyTimer) clearTimeout(copyTimer);
+    copyTimer = setTimeout(() => {
+      if (copyLabel) copyLabel.textContent = defaultCopyLabel;
+      copyBtn?.classList.remove("is-copied");
+      if (copyStatus) copyStatus.hidden = true;
+      copyTimer = null;
+    }, 2200);
+  }
+
+  copyBtn?.addEventListener("click", copyLink);
+
+  const params = new URLSearchParams(location.search);
+  if (params.get("compartir") === "1") openSheet();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   applyBindings();
   setupMenu();
   setupFollow();
   setupForm();
   setupInstall();
+  setupShare();
   registerWorker();
 });

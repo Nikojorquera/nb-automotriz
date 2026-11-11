@@ -918,3 +918,125 @@ body.modal-open { overflow: hidden; }
 .fp-list li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(228,198,92,.18)}
 .fp-text .section-intro{margin-left:0}
 @media (max-width:760px){.fp-wrap{grid-template-columns:1fr;gap:28px;text-align:left}.fp-visual{order:-1}}
+
+/* Compartir app */
+.btn-share {
+  background: transparent;
+  color: var(--gold);
+  border-color: rgba(228, 198, 92, 0.55);
+}
+.btn-share:hover {
+  background: rgba(228, 198, 92, 0.1);
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.footer-actions {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.share-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(8, 4, 18, 0.66);
+  backdrop-filter: blur(4px);
+  padding: 16px;
+}
+.share-modal[hidden] { display: none; }
+.share-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: #1c1233;
+  color: var(--text);
+  border: 1px solid rgba(228, 198, 92, 0.35);
+  border-radius: 18px;
+  padding: 22px 20px 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: shareIn 0.22s ease-out;
+}
+@media (min-width: 700px) {
+  .share-modal { align-items: center; }
+}
+@keyframes shareIn {
+  from { transform: translateY(16px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+.share-card h3 { margin: 0 0 6px; font-size: 1.15rem; }
+.share-sub { margin: 0 0 16px; opacity: 0.8; font-size: 0.95rem; }
+.share-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: 0;
+  color: inherit;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.7;
+  padding: 6px;
+}
+.share-close:hover { opacity: 1; }
+.share-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.share-opt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  min-height: 48px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--display);
+  font-weight: 650;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+.share-opt:hover { border-color: var(--gold); color: var(--gold); }
+.share-opt svg { width: 20px; height: 20px; flex-shrink: 0; }
+.share-opt.share-wa svg { color: #8be0b0; }
+.share-opt.share-fb svg { color: #5a8dee; }
+.share-opt.share-x svg { color: var(--text); }
+.share-opt.share-tg svg { color: #6ab9ff; }
+.share-opt.share-copy {
+  grid-column: 1 / -1;
+  justify-content: center;
+  color: var(--gold);
+  border-color: rgba(228, 198, 92, 0.45);
+  background: rgba(228, 198, 92, 0.08);
+}
+.share-opt.share-copy:hover {
+  border-color: var(--gold);
+  background: rgba(228, 198, 92, 0.14);
+}
+.share-opt.share-copy.is-copied {
+  color: #7ef0b0;
+  border-color: rgba(126, 240, 176, 0.45);
+  background: rgba(126, 240, 176, 0.08);
+}
+.share-copied {
+  margin: 12px 0 0;
+  text-align: center;
+  color: #7ef0b0;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+.share-copied[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .share-card { animation: none; }
+}
