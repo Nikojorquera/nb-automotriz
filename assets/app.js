@@ -178,9 +178,41 @@ function registerWorker() {
   });
 }
 
+function setupFollow() {
+  const widget = document.getElementById("follow-widget");
+  const toggle = document.getElementById("follow-toggle");
+  const menu = document.getElementById("follow-menu");
+  if (!widget || !toggle || !menu) return;
+
+  const close = () => {
+    widget.classList.remove("is-open");
+    menu.hidden = true;
+    toggle.setAttribute("aria-expanded", "false");
+  };
+  const open = () => {
+    widget.classList.add("is-open");
+    menu.hidden = false;
+    toggle.setAttribute("aria-expanded", "true");
+  };
+
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (widget.classList.contains("is-open")) close();
+    else open();
+  });
+  menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
+  document.addEventListener("click", (e) => {
+    if (!widget.contains(e.target)) close();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") close();
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   applyBindings();
   setupMenu();
+  setupFollow();
   setupForm();
   setupInstall();
   registerWorker();
