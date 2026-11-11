@@ -65,6 +65,10 @@
               <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16 16 0 0 1 3.5 5.7a2 2 0 0 1 3-2.2z"/></svg>
               Llamar
             </a>
+            <button class="btn btn-install" data-install type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+              Instalar app
+            </button>
           </div>
           <p class="hero-note">WhatsApp +56 9 9287 0585 · Atención en todo Chile</p>
         </div>
@@ -520,7 +524,7 @@
             <li><a href="#preguntas">Preguntas frecuentes</a></li>
           </ul>
           <p style="margin-top:14px">
-            <button class="btn btn-ghost" id="install-btn" type="button" hidden>Agregar a la pantalla de inicio</button>
+            <button class="btn btn-install" data-install type="button"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg> Instalar app</button>
           </p>
         </div>
       </div>
@@ -565,5 +569,30 @@
   </div>
 
   <script src="assets/app.js" defer></script>
+  <div class="install-modal" id="install-modal" hidden role="dialog" aria-modal="true" aria-labelledby="install-title">
+    <div class="install-card">
+      <button class="install-close" type="button" data-install-close aria-label="Cerrar">&times;</button>
+      <img src="assets/icon-192.png" alt="" width="56" height="56" class="install-logo">
+      <h3 id="install-title">Instala la app de N&amp;B Automotriz</h3>
+      <p class="install-sub">Queda en tu pantalla de inicio como cualquier aplicación, sin pasar por la tienda.</p>
+      <div class="install-steps" data-os="ios">
+        <p><strong>En iPhone (Safari):</strong></p>
+        <ol>
+          <li>Toca el botón <strong>Compartir</strong> (el cuadrado con la flecha hacia arriba).</li>
+          <li>Elige <strong>“Agregar a inicio”</strong>.</li>
+          <li>Toca <strong>Agregar</strong>.</li>
+        </ol>
+      </div>
+      <div class="install-steps" data-os="android">
+        <p><strong>En Android (Chrome):</strong></p>
+        <ol>
+          <li>Toca el menú <strong>⋮</strong> arriba a la derecha.</li>
+          <li>Elige <strong>“Instalar app”</strong> o <strong>“Agregar a la pantalla principal”</strong>.</li>
+          <li>Confirma con <strong>Instalar</strong>.</li>
+        </ol>
+      </div>
+      <button class="btn btn-primary install-ok" type="button" data-install-close>Entendido</button>
+    </div>
+  </div>
 </body>
 </html>

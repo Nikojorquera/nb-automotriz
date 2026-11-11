@@ -154,21 +154,46 @@ function setupForm() {
 }
 
 function setupInstall() {
-  const btn = document.getElementById("install-btn");
-  if (!btn) return;
+  const btns = document.querySelectorAll("[data-install]");
+  const modal = document.getElementById("install-modal");
+  if (!btns.length) return;
+  const standalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+  if (standalone) { btns.forEach((b) => (b.hidden = true)); return; }
+  const ua = navigator.userAgent || "";
+  const isIOS = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
   let deferred = null;
-  window.addEventListener("beforeinstallprompt", (e) => {
-    e.preventDefault();
-    deferred = e;
-    btn.hidden = false;
-  });
-  btn.addEventListener("click", async () => {
-    if (!deferred) return;
-    deferred.prompt();
-    await deferred.userChoice;
-    deferred = null;
-    btn.hidden = true;
-  });
+  window.addEventListener("beforeinstallprompt", (e) => { e.preventDefault(); deferred = e; });
+  window.addEventListener("appinstalled", () => { btns.forEach((b) => (b.hidden = true)); closeModal(); });
+
+  function openModal() {
+    if (!modal) return;
+    modal.querySelectorAll(".install-steps").forEach((el) => {
+      const os = el.getAttribute("data-os");
+      el.hidden = isIOS ? os !== "ios" : /android/i.test(ua) ? os !== "android" : false;
+    });
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+  function closeModal() {
+    if (!modal) return;
+    modal.hidden = true;
+    document.body.classList.remove("modal-open");
+  }
+  btns.forEach((b) => b.addEventListener("click", async () => {
+    if (deferred) {
+      deferred.prompt();
+      try { await deferred.userChoice; } catch (_) {}
+      deferred = null;
+      return;
+    }
+    openModal();
+  }));
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal || e.target.closest("[data-install-close]")) closeModal();
+    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+  }
 }
 
 function registerWorker() {
