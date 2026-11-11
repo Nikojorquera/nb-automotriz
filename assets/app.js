@@ -10,6 +10,8 @@ const CONFIG = {
     "https://www.google.com/maps/dir/?api=1&destination=N%26B+AUTOMOTRIZ+SPA,+Los+Remos+995,+Padre+Hurtado",
   mapsEmbedUrl:
     "https://www.google.com/maps?q=N%26B+AUTOMOTRIZ+SPA,+Los+Remos+995,+Padre+Hurtado&z=17&output=embed",
+  facebookUrl: "https://www.facebook.com/niko.polarizados",
+  tiktokUrl: "https://www.tiktok.com/@niko_jorquera.p",
   defaultWhatsApp:
     "Hola, quiero cotizar un trabajo con N&B Automotriz.",
 };
@@ -28,6 +30,12 @@ function applyBindings() {
   });
   document.querySelectorAll("[data-email]").forEach((el) => {
     el.setAttribute("href", "mailto:" + CONFIG.email);
+  });
+  document.querySelectorAll("[data-facebook]").forEach((el) => {
+    el.setAttribute("href", CONFIG.facebookUrl);
+  });
+  document.querySelectorAll("[data-tiktok]").forEach((el) => {
+    el.setAttribute("href", CONFIG.tiktokUrl);
   });
   document.querySelectorAll("[data-maps-link]").forEach((el) => {
     el.setAttribute("href", CONFIG.mapsPlaceUrl);
