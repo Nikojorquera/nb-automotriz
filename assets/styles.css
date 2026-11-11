@@ -465,9 +465,9 @@ h3 { font-size: 1.15rem; letter-spacing: -0.02em; }
 /* Contact */
 .contact-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 24px;
-  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px 48px;
+  align-items: start;
 }
 .contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
 .contact-list a { color: var(--text); text-decoration: none; font-weight: 650; }
@@ -488,6 +488,7 @@ h3 { font-size: 1.15rem; letter-spacing: -0.02em; }
   font-weight: 700;
   margin-bottom: 2px;
 }
+.meta-value { display: block; color: var(--text); font-weight: 650; }
 .map-wrap {
   min-height: 280px;
   border-radius: var(--radius);
