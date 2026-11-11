@@ -892,3 +892,12 @@ body.modal-open { overflow: hidden; }
 
 .off-benefits-head { margin-top: 48px; }
 .off-benefits-title { font-size: clamp(1.25rem, 2.4vw, 1.6rem); margin: 0; }
+
+/* Marcas */
+.brands-block{max-width:860px;margin:0 auto;text-align:center}
+.brands-title{font-size:1.05rem;margin:22px 0 12px;color:#e4c65c}
+.brand-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.brand-chip{padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.04);font-weight:600;font-size:.95rem}
+.brand-chips.china .brand-chip{border-color:rgba(228,198,92,.55);background:rgba(228,198,92,.10)}
+.brand-chip.more{opacity:.7;font-weight:500}
+.brands-btn{margin-top:26px;display:inline-flex}
