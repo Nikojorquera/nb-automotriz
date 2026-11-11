@@ -901,3 +901,20 @@ body.modal-open { overflow: hidden; }
 .brand-chips.china .brand-chip{border-color:rgba(228,198,92,.55);background:rgba(228,198,92,.10)}
 .brand-chip.more{opacity:.7;font-weight:500}
 .brands-btn{margin-top:26px;display:inline-flex}
+
+/* Huella digital */
+.fp-wrap{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:48px;align-items:center}
+.fp-visual{display:flex;flex-direction:column;align-items:center;gap:18px}
+.fp-ring{position:relative;width:min(300px,70vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;overflow:hidden;
+  background:radial-gradient(circle at 50% 40%,rgba(107,43,232,.45),rgba(36,1,95,.65) 60%,rgba(11,6,22,.9));
+  border:2px solid rgba(228,198,92,.55);box-shadow:0 0 0 10px rgba(228,198,92,.06),0 0 60px rgba(107,43,232,.55)}
+.fp-svg{width:62%;color:var(--gold);filter:drop-shadow(0 0 10px rgba(228,198,92,.55))}
+.fp-scan{position:absolute;left:12%;right:12%;height:3px;top:20%;border-radius:3px;background:linear-gradient(90deg,transparent,#7ef0b0,transparent);box-shadow:0 0 14px #7ef0b0;animation:fpscan 2.6s ease-in-out infinite}
+@keyframes fpscan{0%,100%{top:20%}50%{top:78%}}
+@media (prefers-reduced-motion:reduce){.fp-scan{animation:none;top:50%}}
+.fp-badge{font-size:.85rem;font-weight:600;letter-spacing:.04em;padding:6px 14px;border-radius:999px;color:#7ef0b0;border:1px solid rgba(126,240,176,.45);background:rgba(126,240,176,.08)}
+.fp-list{list-style:none;padding:0;margin:18px 0 22px;display:grid;gap:10px}
+.fp-list li{position:relative;padding-left:28px}
+.fp-list li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:14px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(228,198,92,.18)}
+.fp-text .section-intro{margin-left:0}
+@media (max-width:760px){.fp-wrap{grid-template-columns:1fr;gap:28px;text-align:left}.fp-visual{order:-1}}
