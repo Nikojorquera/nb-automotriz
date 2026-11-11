@@ -889,3 +889,6 @@ body.modal-open { overflow: hidden; }
 .diag-cards .card { display: flex; flex-direction: column; }
 .diag-cards .card p { flex: 1; }
 .diag-btn { margin-top: 14px; align-self: flex-start; }
+
+.off-benefits-head { margin-top: 48px; }
+.off-benefits-title { font-size: clamp(1.25rem, 2.4vw, 1.6rem); margin: 0; }
